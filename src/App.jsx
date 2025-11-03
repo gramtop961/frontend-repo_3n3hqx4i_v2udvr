@@ -1,26 +1,36 @@
-import { useState } from 'react'
+import Hero from './components/Hero'
+import InstallInstructions from './components/InstallInstructions'
+import UsageExamples from './components/UsageExamples'
+import CommandsReference from './components/CommandsReference'
+import Footer from './components/Footer'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 text-gray-900">
+      <nav className="sticky top-0 z-20 border-b border-gray-200 bg-white/80 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+          <div className="flex items-center gap-2">
+            <div className="h-2.5 w-2.5 rounded-full bg-indigo-600" />
+            <span className="font-semibold">hackpack-cli</span>
+          </div>
+          <div className="hidden items-center gap-6 text-sm md:flex">
+            <a href="#install" className="text-gray-600 hover:text-gray-900">Install</a>
+            <a href="#commands" className="text-gray-600 hover:text-gray-900">Commands</a>
+            <a href="https://www.npmjs.com/package/hackpack-cli" target="_blank" rel="noreferrer" className="text-gray-600 hover:text-gray-900">
+              npm
+            </a>
+          </div>
         </div>
-      </div>
+      </nav>
+
+      <main>
+        <Hero />
+        <InstallInstructions />
+        <UsageExamples />
+        <CommandsReference />
+      </main>
+
+      <Footer />
     </div>
   )
 }
